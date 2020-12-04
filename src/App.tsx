@@ -1,7 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-
 import './App.css';
+
+import MyPage from './pages/MyPage'
+import LoginPage from './pages/LoginPage'
+import ErrorPage from './pages/ErrorPage'
 
 function App() {
   return (
@@ -9,13 +12,13 @@ function App() {
       <Router>
         <Switch>
           <Route exact={true} path="/">
-            my page
+            <MyPage />
           </Route>
           <Route path="/login">
-            login
+            <LoginPage />
           </Route>
           <Route path="*">
-            error
+            <ErrorPage />
           </Route>
         </Switch>
       </Router>
