@@ -1,21 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import './App.css';
+import { githubProvider, auth } from './firebase'
 
+import Header from './components/Header'
 import MyPage from './pages/MyPage'
-import LoginPage from './pages/LoginPage'
+import LoginButton from './components/LoginButton'
 import ErrorPage from './pages/ErrorPage'
 
-function App() {
+const App = () => {
   return (
     <div className="App">
+      <Header />
       <Router>
         <Switch>
           <Route exact={true} path="/">
             <MyPage />
           </Route>
           <Route path="/login">
-            <LoginPage />
+            <LoginButton />
           </Route>
           <Route path="*">
             <ErrorPage />
